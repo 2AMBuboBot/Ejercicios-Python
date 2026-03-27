@@ -28,6 +28,10 @@ def abrir(menu):
             messagebox.showerror("Error", "Número debe ser positivo")
             return
 
+        if n > 100000:
+            messagebox.showerror("Error", "El número no puede ser mayor a 100000")
+            return
+
         suma = 0
         secuencia = ""
         for i in range(1, n+1):

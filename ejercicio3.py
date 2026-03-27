@@ -41,7 +41,8 @@ def abrir(menu):
 
     def validar_importe(importe):
         try:
-            return float(importe) >= 0
+            importe = float(importe)
+            return 0 <= importe <= 100000
         except:
             return False
 
@@ -58,7 +59,7 @@ def abrir(menu):
             messagebox.showerror("Error", "Mes inválido.")
             return
         if not validar_importe(importe):
-            messagebox.showerror("Error", "Importe inválido. Debe ser un número positivo.")
+            messagebox.showerror("Error", "Importe inválido. Debe estar entre 0 y 100000.")
             return
 
         importe = float(importe)

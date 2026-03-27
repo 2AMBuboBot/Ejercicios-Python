@@ -37,14 +37,14 @@ def abrir(menu):
     def validar_edad(edad):
         try:
             edad = int(edad)
-            return edad >= 0
+            return 0 <= edad <= 100
         except:
             return False
 
     def validar_juegos(juegos):
         try:
             juegos = int(juegos)
-            return juegos >= 0
+            return 0 <= juegos <= 100000
         except:
             return False
 
@@ -58,10 +58,10 @@ def abrir(menu):
             messagebox.showerror("Error", "Nombre inválido. Solo letras y espacios.")
             return
         if not validar_edad(edad):
-            messagebox.showerror("Error", "Edad inválida. Debe ser un número entero positivo.")
+            messagebox.showerror("Error", "Edad inválida. Debe estar entre 0 y 100.")
             return
         if not validar_juegos(juegos):
-            messagebox.showerror("Error", "Juegos inválido. Debe ser número entero positivo.")
+            messagebox.showerror("Error", "Juegos inválido. Debe estar entre 0 y 100000.")
             return
 
         edad = int(edad)

@@ -80,6 +80,20 @@ def abrir(menu):
         extra = int(extra)
         hijos = int(hijos)
 
+        # 🔥 VALIDACIONES NUEVAS
+        if horas > 100:
+            messagebox.showerror("Error", "Horas normales no pueden ser mayores a 100")
+            return
+        if extra > 100:
+            messagebox.showerror("Error", "Horas extras no pueden ser mayores a 100")
+            return
+        if pago > 100000:
+            messagebox.showerror("Error", "Pago por hora no puede ser mayor a 100000")
+            return
+        if hijos > 10:
+            messagebox.showerror("Error", "Número de hijos no puede ser mayor a 10")
+            return
+
         pago_normal = horas * pago
         pago_extra = extra * (pago * 1.5)
         bono = hijos * 0.5

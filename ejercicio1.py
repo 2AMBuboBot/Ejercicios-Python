@@ -31,7 +31,7 @@ def abrir(menu):
     def validar_sueldo(sueldo):
         try:
             sueldo = float(sueldo)
-            return sueldo >= 0
+            return 0 <= sueldo <= 100000
         except:
             return False
 
@@ -52,7 +52,7 @@ def abrir(menu):
             return
 
         if not validar_sueldo(sueldo):
-            messagebox.showerror("Error", "Sueldo inválido. Debe ser número positivo.")
+            messagebox.showerror("Error", "Sueldo inválido. Debe estar entre 0 y 100000.")
             return
 
         sueldo = float(sueldo)
